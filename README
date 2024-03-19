@@ -1,0 +1,11 @@
+# build docker
+docker build -t [name] .
+
+# run with network and device
+docker run -it --network host --device /dev/video0:/dev/video0 [name]
+
+# It is unnecessary to use all host network, forwarding only certain ports is enough. The port to forward depends on the chosen port of the application
+# web-ros: 8080 (web_video_server)
+# flask-cv: 5000 (streaming via Flask app)
+# webrtc-live: 3000 
+
